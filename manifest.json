@@ -1,0 +1,17 @@
+{
+  "name": "StreamTV",
+  "short_name": "StreamTV",
+  "description": "Application IPTV PWA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%232563eb'/><path d='M20 20h24v4H20zM20 30h16v4H20zM20 40h20v4H20z' fill='white' opacity='0.9'/><path d='M43 35l6 3-6 3V35z' fill='white'/></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
