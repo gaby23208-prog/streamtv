@@ -175,6 +175,25 @@
           <button class="cat-btn" data-cat="OTHER">
             <span class="cat-icon">📡</span><span>Autres</span>
           </button>
+          <button class="cat-btn" data-cat="DOCUMENTARY">
+  <span class="cat-icon">🌍</span><span>Docu</span>
+</button>
+
+<button class="cat-btn" data-cat="ENTERTAINMENT">
+  <span class="cat-icon">🎭</span><span>Divertissement</span>
+</button>
+
+<button class="cat-btn" data-cat="FRANCE">
+  <span class="cat-icon">🇫🇷</span><span>France</span>
+</button>
+
+<button class="cat-btn" data-cat="FILMS">
+  <span class="cat-icon">🎬</span><span>Films</span>
+</button>
+
+<button class="cat-btn" data-cat="SERIES">
+  <span class="cat-icon">📺</span><span>Séries</span>
+</button>
         </div>
       </div>
 
@@ -204,7 +223,10 @@
         </div>
 
         <video id="video-player" class="hidden" playsinline webkit-playsinline muted autoplay controls></video>
-
+<div class="player-zap-controls">
+  <button id="prev-channel-btn">⏮</button>
+  <button id="next-channel-btn">⏭</button>
+</div>
         <!-- PLAYER OVERLAY -->
         <div class="player-overlay" id="player-overlay">
           <div class="overlay-top">
@@ -215,19 +237,9 @@
                 <div class="overlay-program" id="overlay-program"></div>
               </div>
             </div>
-            <button class="overlay-fav" id="overlay-fav-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            </button>
           </div>
 
           <!-- EPG BAR -->
-          <div class="epg-bar" id="epg-bar">
-            <div class="epg-now" id="epg-now">
-              <div class="epg-time" id="epg-time-now"></div>
-              <div class="epg-title" id="epg-title-now">Chargement EPG...</div>
-            </div>
             <div class="epg-next" id="epg-next">
               <div class="epg-time" id="epg-time-next"></div>
               <div class="epg-title" id="epg-title-next"></div>
