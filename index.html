@@ -150,51 +150,55 @@
 
       <!-- CATEGORIES -->
       <div class="categories-scroll">
-        <div class="categories" id="categories">
-          <button class="cat-btn active" data-cat="ALL">
-            <span class="cat-icon">📺</span><span>Tout</span>
-          </button>
-          <button class="cat-btn" data-cat="FAV">
-            <span class="cat-icon">⭐</span><span>Favoris</span>
-          </button>
-          <button class="cat-btn" data-cat="SPORT">
-            <span class="cat-icon">⚽</span><span>Sport</span>
-          </button>
-          <button class="cat-btn" data-cat="NEWS">
-            <span class="cat-icon">📰</span><span>Infos</span>
-          </button>
-          <button class="cat-btn" data-cat="MOVIES">
-            <span class="cat-icon">🎬</span><span>Films</span>
-          </button>
-          <button class="cat-btn" data-cat="KIDS">
-            <span class="cat-icon">🧸</span><span>Kids</span>
-          </button>
-          <button class="cat-btn" data-cat="MUSIC">
-            <span class="cat-icon">🎵</span><span>Musique</span>
-          </button>
-          <button class="cat-btn" data-cat="OTHER">
-            <span class="cat-icon">📡</span><span>Autres</span>
-          </button>
-          <button class="cat-btn" data-cat="DOCUMENTARY">
-  <span class="cat-icon">🌍</span><span>Docu</span>
-</button>
+<div class="categories" id="categories">
+  <button class="cat-btn active" data-cat="ALL">
+    <span class="cat-icon">📺</span><span>Tout</span>
+  </button>
 
-<button class="cat-btn" data-cat="ENTERTAINMENT">
-  <span class="cat-icon">🎭</span><span>Divertissement</span>
-</button>
+  <button class="cat-btn" data-cat="FAV">
+    <span class="cat-icon">⭐</span><span>Favoris</span>
+  </button>
 
-<button class="cat-btn" data-cat="FRANCE">
-  <span class="cat-icon">🇫🇷</span><span>France</span>
-</button>
+  <button class="cat-btn" data-cat="SPORT">
+    <span class="cat-icon">⚽</span><span>Sport</span>
+  </button>
 
-<button class="cat-btn" data-cat="FILMS">
-  <span class="cat-icon">🎬</span><span>Films</span>
-</button>
+  <button class="cat-btn" data-cat="NEWS">
+    <span class="cat-icon">📰</span><span>Infos</span>
+  </button>
 
-<button class="cat-btn" data-cat="SERIES">
-  <span class="cat-icon">📺</span><span>Séries</span>
-</button>
-        </div>
+  <button class="cat-btn" data-cat="FILMS">
+    <span class="cat-icon">🎬</span><span>Films</span>
+  </button>
+
+  <button class="cat-btn" data-cat="SERIES">
+    <span class="cat-icon">📺</span><span>Séries</span>
+  </button>
+
+  <button class="cat-btn" data-cat="KIDS">
+    <span class="cat-icon">🧸</span><span>Kids</span>
+  </button>
+
+  <button class="cat-btn" data-cat="MUSIC">
+    <span class="cat-icon">🎵</span><span>Musique</span>
+  </button>
+
+  <button class="cat-btn" data-cat="DOCUMENTARY">
+    <span class="cat-icon">🌍</span><span>Docu</span>
+  </button>
+
+  <button class="cat-btn" data-cat="ENTERTAINMENT">
+    <span class="cat-icon">🎭</span><span>Divertissement</span>
+  </button>
+
+  <button class="cat-btn" data-cat="FRANCE">
+    <span class="cat-icon">🇫🇷</span><span>France</span>
+  </button>
+
+  <button class="cat-btn" data-cat="OTHER">
+    <span class="cat-icon">📡</span><span>Autres</span>
+  </button>
+</div>
       </div>
 
       <!-- CHANNEL COUNT -->
@@ -223,6 +227,10 @@
         </div>
 
         <video id="video-player" class="hidden" playsinline webkit-playsinline muted autoplay controls></video>
+        <div class="player-zap-controls">
+  <button id="prev-channel-btn" type="button">⏮</button>
+  <button id="next-channel-btn" type="button">⏭</button>
+</div>
 <div class="player-zap-controls">
   <button id="prev-channel-btn">⏮</button>
   <button id="next-channel-btn">⏭</button>
