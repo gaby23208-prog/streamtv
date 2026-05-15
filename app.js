@@ -99,11 +99,15 @@ function extractAttr(line, attr) {
 // CATEGORY CLASSIFIER
 // ============================================================
 const CATEGORY_RULES = [
-  { cat: 'SPORT',  kw: ['sport','foot','football','soccer','tennis','nba','nfl','equipe','l1','ligue 1','motorsport','f1','rugby','basket','handball','cycling','golf','boxe','ufc','mma','olympic','euro'] },
-  { cat: 'NEWS',   kw: ['news','info','actualit','bfm','cnews','lci','itele','france info','euronews','cnn','bbc','al jazeera','rfi','tv5','france24','rtl','rmc'] },
-  { cat: 'MOVIES', kw: ['film','cine','cinema','movie','action','horreur','comedie','canal+','ocs','polar','serie','drama','max','prime','netflix','disney'] },
-  { cat: 'KIDS',   kw: ['kids','enfant','child','junior','cartoon','anime','boomerang','nickelodeon','disney jr','tiji','gulli','piwi','tfou','boing'] },
-  { cat: 'MUSIC',  kw: ['music','musique','hits','mtv','clubbing','radio','concert','jazz','classical','club'] },
+  { cat: 'SPORT', kw: ['sport','foot','football','soccer','tennis','nba','nfl','equipe','ligue 1','rugby','basket','f1','bein','eurosport'] },
+  { cat: 'NEWS', kw: ['news','info','actualit','bfm','cnews','lci','france info','euronews','cnn','bbc','france24'] },
+  { cat: 'FILMS', kw: ['film','films','movie','movies','cinema','ciné','vod film','action','thriller','horreur','comedie','drame'] },
+  { cat: 'SERIES', kw: ['serie','série','series','séries','episode','saison','season','vod serie','show'] },
+  { cat: 'KIDS', kw: ['kids','enfant','junior','cartoon','anime','disney','gulli','nickelodeon','boomerang'] },
+  { cat: 'MUSIC', kw: ['music','musique','mtv','radio','concert','hits'] },
+  { cat: 'DOCUMENTARY', kw: ['docu','documentaire','documentary','discovery','nat geo','histoire','science','nature'] },
+  { cat: 'ENTERTAINMENT', kw: ['divertissement','entertainment','reality','talk','humour','w9','tmc','nrj12'] },
+  { cat: 'FRANCE', kw: ['tf1','france 2','france 3','m6','arte','c8','w9','tmc','nrj12','cherie 25'] },
 ];
 
 function classifyChannel(name, group) {
@@ -276,7 +280,7 @@ function cacheDOM() {
     'categories',
     'video-player','player-placeholder','player-overlay',
     'player-loading','player-loading-text','player-error','player-error-text',
-    'retry-btn',
+    'retry-btn','prev-channel-btn','next-channel-btn',
     'overlay-logo','overlay-channel-name','overlay-program','overlay-fav-btn',
     'epg-bar','epg-time-now','epg-title-now','epg-time-next','epg-title-next',
     'info-logo','info-name','info-cat',
@@ -384,7 +388,7 @@ function updateFavButtons(url) {
 function updateFavUI() {
   const fav = isFav(State.currentChannel?.url);
   DOM.favToggleBtn.classList.toggle('active', fav);
-  DOM.overlayFavBtn.classList.toggle('active', fav);
+  DOM.overlayFavBtn?.classList.toggle('active', fav);
 }
 
 // ============================================================
@@ -849,10 +853,6 @@ function initPlayerInteractions() {
     }
   });
 
-  DOM.overlayFavBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (State.currentChannel) toggleFavorite(State.currentChannel.url);
-  });
 
   DOM.favToggleBtn.addEventListener('click', () => {
     if (State.currentChannel) toggleFavorite(State.currentChannel.url);
@@ -862,6 +862,15 @@ function initPlayerInteractions() {
     DOM.playerError.classList.add('hidden');
     if (State.currentChannel) loadStream(State.currentChannel.url);
   });
+DOM.prevChannelBtn?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  navigateChannel(-1);
+});
+
+DOM.nextChannelBtn?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  navigateChannel(1);
+});
 }
 
 // ============================================================
@@ -919,7 +928,19 @@ function escHtml(str) {
 }
 
 function catLabel(cat) {
-  const labels = { SPORT: '⚽ Sport', NEWS: '📰 Infos', MOVIES: '🎬 Films', KIDS: '🧸 Kids', MUSIC: '🎵 Musique', OTHER: '📡 Autres' };
+  const labels = {
+    SPORT: '⚽ Sport',
+    NEWS: '📰 Infos',
+    FILMS: '🎬 Films',
+    SERIES: '📺 Séries',
+    KIDS: '🧸 Kids',
+    MUSIC: '🎵 Musique',
+    DOCUMENTARY: '🌍 Documentaires',
+    ENTERTAINMENT: '🎭 Divertissement',
+    FRANCE: '🇫🇷 France',
+    OTHER: '📡 Autres'
+  };
+
   return labels[cat] || cat;
 }
 
