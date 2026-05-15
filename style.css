@@ -972,35 +972,3 @@ html, body {
 @media (min-width: 768px) {
   .toast { bottom: 20px; }
 }
-/* Masquer les infos inutiles dans le lecteur */
-.overlay-fav,
-.epg-bar {
-  display: none !important;
-}
-
-/* Boutons chaîne suivante / précédente */
-.player-zap-controls {
-  position: absolute;
-  left: 50%;
-  bottom: 14px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  z-index: 20;
-}
-
-.player-zap-controls button {
-  width: 46px;
-  height: 38px;
-  border: none;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.65);
-  color: white;
-  font-size: 18px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.player-zap-controls button:active {
-  transform: scale(0.94);
-}
